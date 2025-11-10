@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sen:wght@400..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Sen";
+  line-height: 1.6;
+}
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* allow absolutely positioned ColorBends to align to this container */
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem;
+  margin: 0;
+  animation: fadeIn 1s ease-in;
+  background-color: transparent; /* or remove background-color */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+h3 {
+  font-family: "Sen";
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+h4 {
+  font-family: "Sen";
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  color: #666666;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.page-button {
+  font-family: "Sen";
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  width: auto;
+}
+
+.page-button::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0.25rem;
+  left: 50%;
+  background-color: currentColor;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.page-button:hover::after {
+  width: 100%;
+}
+
+.page-button:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  h3 {
+    font-size: 1.2rem;
+  }
+  
+  h4 {
+    font-size: 0.9rem;
+  }
+  
+  .page-button {
+    font-size: 0.95rem;
+  }
+}
+
+.home-page {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.home-page h4 {
+  color: #999999;
+}

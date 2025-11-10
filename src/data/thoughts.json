@@ -1,0 +1,25 @@
+{
+  "thoughts": [
+    {
+      "id": 1,
+      "title": "On Building Small, Useful Tools",
+      "excerpt": "Small utilities compound — invest in tiny tools that save time and reduce friction in your workflow.",
+      "date": "Oct 12, 2025",
+      "content": "# On Building Small, Useful Tools\n\nWhen we think about productivity tools, it's easy to focus on the big, feature-rich applications that promise to revolutionize our workflow. However, I've found that the most impactful tools in my daily work are often the smallest ones — tiny utilities that do one thing exceptionally well.\n\n## The Power of Small Tools\n\nSmall tools have several advantages:\n\n1. **Quick to build** - You can create them in an afternoon\n2. **Easy to maintain** - Less code means fewer bugs\n3. **Focused purpose** - They solve one problem really well\n\n## Examples from My Workflow\n\nHere are a few tiny tools I built that save me time every day:\n\n- A CLI that formats commit messages\n- A VS Code extension that organizes imports\n- A Bash script that sets up project templates\n\n## Getting Started\n\nTo build your own utilities:\n\n```javascript\n// Example: A simple CLI tool\nconst formatMessage = (msg) => {\n  return msg\n    .trim()\n    .toLowerCase()\n    .replace(/\\s+/g, '-');\n};\n```\n\nThe key is identifying repetitive tasks in your workflow and automating them away, one small tool at a time."
+    },
+    {
+      "id": 2,
+      "title": "Designing for Edge Cases",
+      "excerpt": "Edge cases aren't bugs — they're opportunities to make products resilient and delightful for more users.",
+      "date": "Sep 03, 2025",
+      "content": "# Designing for Edge Cases\n\nWhen building products, it's tempting to focus solely on the happy path — the ideal scenario where everything works perfectly. But the true test of a product's resilience lies in how it handles edge cases.\n\n## Why Edge Cases Matter\n\nEdge cases reveal:\n- Assumptions in our design\n- Gaps in our testing\n- Opportunities for improvement\n\n## Common Edge Cases\n\n1. Network failures\n2. Invalid input\n3. Resource constraints\n4. Concurrent operations\n\n## Example Handling\n\n```javascript\nasync function fetchData(id) {\n  try {\n    const response = await fetch(`/api/data/${id}`);\n    if (!response.ok) {\n      throw new Error('Network response was not ok');\n    }\n    return await response.json();\n  } catch (error) {\n    // Graceful degradation\n    console.error('Error:', error);\n    return null;\n  }\n}\n```\n\nBy embracing edge cases early, we build more robust and inclusive products."
+    },
+    {
+      "id": 3,
+      "title": "Why I Love Rust (Sometimes)",
+      "excerpt": "Memory safety without a GC is a fascinating tradeoff; here are small wins I found when prototyping in Rust.",
+      "date": "Aug 22, 2025",
+      "content": "# Why I Love Rust (Sometimes)\n\nAfter spending months building prototypes in Rust, I've developed a love-hate relationship with the language. Here's what I've learned about memory safety and performance.\n\n## The Good Parts\n\n1. **Ownership Model**\n   - Clear memory management\n   - No garbage collection\n   - Predictable performance\n\n2. **Type System**\n   - Prevents many common bugs\n   - Makes refactoring easier\n\n## Code Examples\n\n```rust\n// A simple example of ownership\nfn main() {\n    let s1 = String::from(\"hello\");\n    let s2 = s1; // s1 is moved to s2\n    \n    // println!(\"{}\", s1); // This would not compile!\n    println!(\"{}\", s2); // This works fine\n}\n```\n\n## Trade-offs\n\n- Steeper learning curve\n- More verbose code\n- Longer compile times\n\nBut for performance-critical applications, these trade-offs are often worth it."
+    }
+  ]
+}

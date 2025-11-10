@@ -1,0 +1,120 @@
+@import url('./Home.css');
+
+.about-page {
+  /* min-height: fit-content; */
+  padding: 2.5rem 1.5rem 6.5rem 1.5rem; /* extra bottom padding for footer */
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  animation: fadeIn 1s ease-in;
+}
+
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.about-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2.5px solid #222;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.10);
+}
+
+.about-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  color: #f3f3f3;
+}
+
+.about-role {
+  font-size: 1.05rem;
+  color: #bdbdbd;
+  font-weight: 400;
+}
+
+.about-main {
+  background: rgba(30, 30, 40, 0.7);
+  border-radius: 14px;
+  padding: 1.5rem 2rem;
+  color: #eaeaea;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.about-list li {
+  color: #eaeaea;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.about-extra {
+  background: rgba(30, 30, 40, 0.6);
+  border-radius: 10px;
+  padding: 1.1rem 1.5rem;
+  color: #eaeaea;
+  text-align: center;
+  box-shadow: 0 1px 8px 0 rgba(0,0,0,0.07);
+}
+
+.about-extra h4 {
+  margin-bottom: 0.5rem;
+  color: #f3ef17ff;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.contact-form {
+  max-width: 640px;
+  margin: 1rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.12);
+  margin-top: 0.5rem;
+}
+
+.submit-btn {
+  align-self: flex-start;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  background: #0b5fff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.dark-mode .contact-form input,
+.dark-mode .contact-form textarea {
+  border: 1px solid rgba(255,255,255,0.08);
+}

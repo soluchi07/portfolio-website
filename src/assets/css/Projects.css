@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sen:wght@400..800&display=swap');
+
+.projects-page {
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.projects-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.projects-title {
+    font-family: "Sen";
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    letter-spacing: 0.5px;
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* a{
+    border-bottom: 1px solid white;
+} */
+
+.project-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem 0;
+    border-bottom: 1px solid;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+    /* opacity: 1; */
+}
+
+.project-item:hover {
+    opacity: 0.7;
+}
+
+.project-item:last-child {
+    border-bottom: none;
+}
+
+.project-info {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.project-title {
+    font-family: "Sen";
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: 0.3px;
+}
+
+.project-description {
+    font-family: "Sen";
+    font-size: 0.95rem;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.project-date {
+    font-family: "Sen";
+    font-size: 0.9rem;
+    font-weight: 400;
+    white-space: nowrap;
+    opacity: 0.6;
+}
+
+/* Dark mode */
+.projects-page.dark-mode {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.dark-mode .project-item {
+    border-bottom-color: rgba(255, 255, 255, 0.498);
+}
+
+.dark-mode .project-description {
+    color: #999999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .projects-page {
+        padding: 3rem 1.5rem;
+    }
+
+    .projects-title {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .project-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .project-info {
+        padding-right: 0;
+    }
+
+    .project-title {
+        font-size: 1rem;
+    }
+
+    .project-description {
+        font-size: 0.9rem;
+    }
+
+    .project-date {
+        font-size: 0.85rem;
+    }
+}
