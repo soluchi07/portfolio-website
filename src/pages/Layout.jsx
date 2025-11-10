@@ -1,4 +1,4 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate, useLocation } from 'react-router-dom';
 import '../assets/css/Layout.css';    
 import LogoLoop from './LogoLoop';
 import linkedin from '../assets/images/linkedin.jpg';
@@ -6,6 +6,23 @@ import github from '../assets/images/github.png';
 import email from '../assets/images/email.jpg';
 
 export default function Layout() {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    // show back button on every page except home
+    const showBack = location.pathname !== '/';
+
+    const handleBack = () => {
+        // if there's a previous entry in the history stack, go back
+        // otherwise, fall back to the home page
+        try {
+            if (window.history.length > 1) navigate(-1);
+            else navigate('/');
+        } catch (e) {
+            navigate('/');
+        }
+    };
+
     const techLogos = [
         { href: "https://linkedin.com/in/soluchi", alt: "Linkedin", src: linkedin },
         { href: "https://github.com/soluchi07", alt: "Github", src: github },
@@ -14,7 +31,10 @@ export default function Layout() {
 
     return (
         <div className="layout-container">
-        <div className="layout-content">
+            {showBack && (
+                <button className="back-button" onClick={handleBack} aria-label="Go back to previous page">← Back</button>
+            )}
+            <div className="layout-content">
             <Outlet/>
         </div>
         <footer className="layout-footer dark-mode">

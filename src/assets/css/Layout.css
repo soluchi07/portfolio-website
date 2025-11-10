@@ -82,3 +82,41 @@
 .footer-link:hover {
     opacity: 0.8;
 }
+
+/* Back button shown on all pages except home */
+.back-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 0.45rem 0.7rem;
+  border-radius: 6px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: transform 0.08s ease, opacity 0.12s ease, background-color 0.12s ease;
+}
+
+.back-button:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+  background: rgba(255,255,255,0.06);
+}
+
+.back-button:active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media (max-width: 520px) {
+  .back-button {
+    top: 0.6rem;
+    left: 0.6rem;
+    padding: 0.35rem 0.6rem;
+    font-size: 0.85rem;
+  }
+}
