@@ -27,7 +27,7 @@ export default function About() {
       <footer className="about-extra">
         <h4>What drives me?</h4>
         <p>
-          I love building things that actually work and solve real problems—whether it's a social platform for fandom nerds like me or an AI trivia bot I threw together at a hackathon. When I'm not coding, you'll find me diving into new TV shows, playing D&D with friends, or contributing to open-source projects. I'm all about learning by doing, sharing what I know, and making tech feel less intimidating for everyone.
+          I love building things that actually work and solve real problems—whether it's a social platform for fandom nerds like me or an AI trivia bot I threw together at a hackathon. When I'm not coding, you'll find me diving into new TV shows, playing video games with friends, or contributing to open-source projects. I'm all about learning by doing, sharing what I know, and making tech feel less intimidating for everyone.
         </p>
       </footer>
     </section>
