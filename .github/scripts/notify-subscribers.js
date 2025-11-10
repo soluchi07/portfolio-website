@@ -3,6 +3,7 @@ import fs from "fs/promises";
 import { execSync } from "child_process";
 import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
+import 'dotenv/config';
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const SUPABASE_URL = process.env.SUPABASE_URL;
@@ -22,13 +23,31 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
 
 async function readCurrentThoughts() {
   const raw = await fs.readFile("src/data/thoughts.json", "utf8");  // ✅ updated path
-  return JSON.parse(raw);
+  try {
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed)) return parsed;
+    if (parsed && typeof parsed === "object" && Array.isArray(parsed.thoughts)) return parsed.thoughts;
+    console.warn("readCurrentThoughts: src/data/thoughts.json did not contain an array — treating as empty list.");
+    return [];
+  } catch (e) {
+    console.error("Failed to parse src/data/thoughts.json:", e);
+    return [];
+  }
 }
 
 function readPreviousThoughts() {
   try {
     const prev = execSync("git show HEAD^:src/data/thoughts.json", { encoding: "utf8" });
-    return JSON.parse(prev);
+    try {
+      const parsed = JSON.parse(prev);
+      if (Array.isArray(parsed)) return parsed;
+      if (parsed && typeof parsed === "object" && Array.isArray(parsed.thoughts)) return parsed.thoughts;
+      console.warn("readPreviousThoughts: previous src/data/thoughts.json did not contain an array — treating as empty list.");
+      return [];
+    } catch (e) {
+      console.warn("readPreviousThoughts: could not parse previous thoughts.json, treating as empty list.", e);
+      return [];
+    }
   } catch (err) {
     return [];
   }
@@ -41,8 +60,10 @@ async function getSubscribers() {
 }
 
 function findNewThoughts(current, previous) {
-  const prevIds = new Set(previous.map(t => t.id));
-  return current.filter(t => !prevIds.has(t.id));
+  const curr = Array.isArray(current) ? current : [];
+  const prev = Array.isArray(previous) ? previous : [];
+  const prevIds = new Set(prev.map(t => (t && t.id) || null).filter(Boolean));
+  return curr.filter(t => t && !prevIds.has(t.id));
 }
 
 async function sendEmailTo(subscriber, thought) {
