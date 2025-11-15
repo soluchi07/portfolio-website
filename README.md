@@ -1,16 +1,108 @@
-# React + Vite
+# Soluchi Fidel-Ibeabuchi — Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the source code for my personal portfolio website, where I showcase my skills, projects, and background as a computer scientist. The site is designed to be clean, responsive, and accessible.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
 
-## React Compiler
+- [About](#about)  
+- [Technologies](#technologies)  
+- [Structure](#structure)  
+- [Installation](#installation)  
+- [Usage](#usage)  
+- [Deployment](#deployment)  
+- [License](#license)  
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+---
 
-## Expanding the ESLint configuration
+## About
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+My portfolio website serves as a central hub to present my work, share my story, and connect with others. It features:
+
+- A **Projects** section that highlights academic, personal, and open-source work  
+- An **About Me** page with background, experience, and interests  
+- A **Contact** page for professional communication  
+- A **Resume** section or downloadable CV  
+
+---
+
+## Technologies
+
+The website is built using:
+
+- HTML5 & CSS3  
+- JavaScript (or your framework/library, e.g., React, Next.js)  
+- Responsive design principles (mobile-first)  
+- Optionally: deployment tools (GitHub Pages, Vercel, etc.)
+
+---
+
+## Structure
+
+```
+
+portfolio-website/
+├── public/              # Static assets (images, icons)
+├── src/                 # Source files (HTML, CSS, JS or component files)
+├── styles/              # CSS, SCSS, or design system files
+├── pages/               # (if using Next.js or similar)
+├── scripts/             # Build/deploy scripts
+├── README.md            # This file
+└── LICENSE               # License information (if applicable)
+
+````
+
+---
+
+## Installation
+
+To run the portfolio locally, clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/soluchi07/portfolio-website.git
+cd portfolio-website
+
+# If using a JS framework / build tool
+npm install     # or yarn install
+````
+
+---
+
+## Usage
+
+To view the website locally:
+
+```bash
+npm run dev       # or the appropriate local server command
+```
+
+Make changes to the source files in `src/` (or your framework’s folder structure), then refresh your browser to see updates.
+
+---
+
+## Deployment
+
+You can deploy this site using services such as GitHub Pages, Vercel, or Netlify. For GitHub Pages:
+
+1. Build the production version of the site:
+
+   ```bash
+   npm run build
+   ```
+2. Deploy the `out` or `build` folder to the `gh-pages` branch (or configure your build output as the GitHub Pages source).
+
+---
+
+## License
+
+Specify your license here (e.g., MIT, Apache-2.0) or indicate that all rights are reserved.
+
+---
+
+## Acknowledgments
+
+* Thanks to open-source templates and design systems for inspiration
+* (Optional) Any libraries or tutorials you used
+
+```
