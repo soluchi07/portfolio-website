@@ -92,15 +92,3 @@ You can deploy this site using services such as GitHub Pages, Vercel, or Netlify
    ```
 2. Deploy the `out` or `build` folder to the `gh-pages` branch (or configure your build output as the GitHub Pages source).
 
----
-
-## License
-
-Specify your license here (e.g., MIT, Apache-2.0) or indicate that all rights are reserved.
-
----
-
-## Acknowledgments
-
-* Thanks to open-source templates and design systems for inspiration
-* (Optional) Any libraries or tutorials you used
