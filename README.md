@@ -104,5 +104,3 @@ Specify your license here (e.g., MIT, Apache-2.0) or indicate that all rights ar
 
 * Thanks to open-source templates and design systems for inspiration
 * (Optional) Any libraries or tutorials you used
-
-```
