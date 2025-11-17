@@ -62,8 +62,6 @@ To run the portfolio locally, clone the repository and install dependencies:
 ```bash
 git clone https://github.com/soluchi07/portfolio-website.git
 cd portfolio-website
-
-# If using a JS framework / build tool
 npm install     # or yarn install
 ````
 
@@ -74,10 +72,10 @@ npm install     # or yarn install
 To view the website locally:
 
 ```bash
-npm run dev       # or the appropriate local server command
+npm run dev
 ```
 
-Make changes to the source files in `src/` (or your framework’s folder structure), then refresh your browser to see updates.
+Make changes to the source files in `src/` (or your framework's folder structure), then refresh your browser to see updates.
 
 ---
 
