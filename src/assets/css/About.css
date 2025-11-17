@@ -1,7 +1,6 @@
 @import url('./Home.css');
 
 .about-page {
-  /* min-height: fit-content; */
   padding: 2.5rem 1.5rem 6.5rem 1.5rem; /* extra bottom padding for footer */
   max-width: 700px;
   margin: 0 auto;
