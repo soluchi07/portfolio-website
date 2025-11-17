@@ -33,7 +33,7 @@ export default function Research() {
 
       <div className="research-list">
         {researchItems.map(item => (
-          <article className="research-item" key={item.id}>
+          <div key={item.id} className="research-item">
             <div className="research-meta">
               <h3 className="research-title">{item.title}</h3>
               <div className="research-by">{item.institution} • <span className="year">{item.year}</span></div>
@@ -41,13 +41,8 @@ export default function Research() {
                 <div className="research-tech">{item.technologies}</div>
               )}
             </div>
-            <p className="research-summary">{item.summary}</p>
-            {/* {item.link && (
-              <a className="research-link" href={item.link} target="_blank" rel="noreferrer noopener">
-                Learn more
-              </a>
-            )} */}
-          </article>
+            <span className="research-year">{item.year}</span>
+          </div>
         ))}
       </div>
     </section>

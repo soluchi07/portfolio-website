@@ -83,40 +83,57 @@
     opacity: 0.8;
 }
 
-/* Back button shown on all pages except home */
-.back-button {
+/* Back button shown on all pages except home and thought details */
+@keyframes backButtonFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.home-button {
   position: fixed;
-  top: 1rem;
-  left: 1rem;
+  top: 2.5rem;
+  left: 1.5rem;
   z-index: 30;
-  background: rgba(255, 255, 255, 0.04);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.12);
-  padding: 0.45rem 0.7rem;
-  border-radius: 6px;
+  background: transparent;
+  color: #9ca3af;
+  border: none;
+  padding: 0;
+  border-radius: 0;
   font-family: "Inter", sans-serif;
   font-size: 0.95rem;
   cursor: pointer;
-  backdrop-filter: blur(4px);
-  transition: transform 0.08s ease, opacity 0.12s ease, background-color 0.12s ease;
+  backdrop-filter: none;
+  text-decoration: none;
+  width: fit-content;
+  animation: backButtonFadeIn 0.6s ease-out;
+  transition: color 0.2s ease;
 }
 
-.back-button:hover {
-  transform: translateY(-1px);
-  opacity: 0.95;
-  background: rgba(255,255,255,0.06);
+.home-button:hover {
+  color: #f3f3f3;
+  transform: none;
+  opacity: 1;
+  background: transparent;
+}
+.home-button:focus{
+  outline: none;
 }
 
-.back-button:active {
-  transform: translateY(0);
+.home-button:active {
+  transform: scale(0.98);
   opacity: 1;
 }
 
 @media (max-width: 520px) {
   .back-button {
-    top: 0.6rem;
-    left: 0.6rem;
-    padding: 0.35rem 0.6rem;
+    top: 2rem;
+    left: 1rem;
     font-size: 0.85rem;
   }
 }

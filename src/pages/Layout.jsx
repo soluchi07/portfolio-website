@@ -9,18 +9,13 @@ export default function Layout() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    // show back button on every page except home
-    const showBack = location.pathname !== '/';
+    // show back button on every page except home and thought details
+    const showBack = location.pathname !== '/' && !location.pathname.startsWith('/thoughts/');
 
     const handleBack = () => {
         // if there's a previous entry in the history stack, go back
         // otherwise, fall back to the home page
-        try {
-            if (window.history.length > 1) navigate(-1);
-            else navigate('/');
-        } catch (e) {
-            navigate('/');
-        }
+        navigate('/');
     };
 
     const techLogos = [
@@ -32,7 +27,7 @@ export default function Layout() {
     return (
         <div className="layout-container">
             {showBack && (
-                <button className="back-button" onClick={handleBack} aria-label="Go back to previous page">← Back</button>
+                <button className="home-button" onClick={handleBack} aria-label="Go back to previous page">← Go Home</button>
             )}
             <div className="layout-content">
             <Outlet/>

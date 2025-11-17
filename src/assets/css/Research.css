@@ -22,41 +22,62 @@
 }
 
 .research-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .research-item {
-  background: rgba(30,30,40,0.7);
-  border-radius: 12px;
-  padding: 1.1rem 1.25rem;
-  color: #eaeaea;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem 0;
+  border-bottom: 1px solid;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.research-item:hover {
+  opacity: 0.7;
+}
+
+.research-item:last-child {
+  border-bottom: none;
 }
 
 .research-meta {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
+  flex: 1;
+  padding-right: 2rem;
 }
 
 .research-title {
-  font-size: 1.05rem;
-  margin: 0;
+  font-family: "Sen";
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 0.3px;
   color: #f3f3f3;
 }
 
 .research-by {
-  color: #bdbdbd;
-  font-size: 0.95rem;
+  font-family: "Sen";
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #9ca3af;
 }
 
 .research-summary {
-  margin: 0.6rem 0 0.75rem 0;
-  line-height: 1.6;
-  color: #e6e6e6;
+  margin: 0;
+  font-family: "Sen";
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #999999;
+  display: none;
 }
 
 .research-link {
@@ -68,10 +89,19 @@
 }
 
 .research-tech {
-  color: #9ca3af;
-  font-size: 0.85rem;
-  font-style: italic;
-  margin-top: 0.15rem;
+  font-family: "Sen";
+  font-size: 0.9rem;
+  font-weight: 400;
+  opacity: 0.6;
+  margin-top: 0;
+}
+
+.research-year {
+  font-family: "Sen";
+  font-size: 0.9rem;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0.6;
 }
 
 @media (min-width: 720px) {
