@@ -1,6 +1,12 @@
 {
     "projects": [
         {
+            "title": "AnimeRec",
+            "description": "A full-stack anime recommendation system combining a scalable PostgreSQL database, ETL pipelines, and a hybrid machine learning engine (content-based + collaborative filtering). Includes a FastAPI backend with caching and a web dashboard for exploring personalized anime recommendations.",
+            "date": "December 2025",
+            "link": "https://github.com/soluchi07/animerec"
+        },
+        {
             "title": "DeBrief",
             "description": "A modern fandom-focused social media platform built with React and Supabase. Share posts about your favorite TV shows, movies, and fandoms with episode-specific discussions, spoiler warnings, and community features",
             "date": "August 2025",
