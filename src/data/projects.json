@@ -1,0 +1,41 @@
+{
+    projects: [
+        {
+            title: "DeBrief",
+            description: "A modern fandom-focused social media platform built with React and Supabase. Share posts about your favorite TV shows, movies, and fandoms with episode-specific discussions, spoiler warnings, and community features",
+            date: "August 2025",
+            link: "https://github.com/soluchi07/DeBrief"
+        },
+        {
+            title: "Museum Collection Viewer",
+            description: "An interactive web application that brings museum collections to life through an intuitive browsing interface. Built with vanilla JavaScript, this project demonstrates creative approaches to displaying and filtering large datasets of artifacts and artwork, making cultural heritage accessible and engaging in a digital format",
+            date: "August 2025",
+            link: "https://github.com/soluchi07/Museum-Collection-Viewer"
+        },
+        {
+            title: "Wchicken-bot",
+            description: "A Python-powered bot application showcasing automation capabilities and API integrations. This project explores the practical applications of bot development, from handling user interactions to processing commands, demonstrating foundational skills in building automated systems",
+            date: "August 2025",
+            link: "https://github.com/soluchi07/wchicken-bot"
+        },
+        {
+            title: "Flashcard App",
+            description: "A dynamic study tool designed to help students master any subject through spaced repetition and active recall. Built with JavaScript, this application allows users to create custom flashcard decks, flip through cards, and track their progress—making studying more interactive and effective than traditional methods",
+            date: "July 2025",
+            link: "https://github.com/soluchi07/Flashcard-app"
+        },
+        {
+            title: "DND Character Sheet",
+            description: "A digital character management system for Dungeons & Dragons players who want to track their hero's journey without drowning in paperwork. Built with JavaScript, this tool handles character stats, inventory, abilities, and campaign notes in an intuitive interface—because rolling for initiative is stressful enough without fumbling through character sheets",
+            date: "July 2025",
+            link: "https://github.com/soluchi07/DND-Character-Sheet"
+        },
+        {
+            title: "Uno Game in C++",
+            description: "A fully functional terminal-based recreation of the classic Uno card game, complete with all standard rules including Wild cards, Draw Two, Reverse, and Skip mechanics. Built with object-oriented programming principles in C++, featuring modular architecture, robust input validation, and comprehensive documentation—proving that console games can still pack a punch",
+            date: "June 2025",
+            link: "https://github.com/soluchi07/Uno-Game-in-C-"
+        }       
+        
+    ]
+}
