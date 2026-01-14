@@ -20,5 +20,14 @@
     "technologies": "Python, Fusion, Jupyter, Spatial Omics, Data Visualization",
     "link": "https://osf.io/qnbf5"
   },
+  {
+  "id": 3,
+  "title": "Predicting Auto-Insurance Claims from Vehicle Specifications & Driver Profiles",
+  "institution": "AI4ALL Ignite",
+  "year": "2025",
+  "summary": "Investigated the feasibility of predicting auto-insurance claim risk using supervised machine learning on vehicle specification and driver profile datasets. Conducted extensive exploratory data analysis, addressed severe class imbalance (~6% claims) through class weighting and threshold optimization, and evaluated logistic regression and random forest models using ROC-AUC and PR-AUC metrics. Demonstrated improved risk ranking on balanced driver-profile data while highlighting the challenges of rare-event prediction in insurance contexts.",
+  "technologies": "Python, pandas, scikit-learn, Jupyter, Machine Learning, EDA, Classification Models, Imbalanced Learning",
+  "link": "https://github.com/Jomak-x/Car-Insurance-ML"
+}
 ]
 }
