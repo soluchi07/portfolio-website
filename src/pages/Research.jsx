@@ -19,7 +19,7 @@ const researchItems = [
     summary:
       'Processed hundreds of high-dimensional spatial omics datasets by implementing Python-based pipelines with optimized data handling protocols for enhanced scalability and reliability. Authored and registered a formal research proposal on OSF focused on advanced data visualization techniques for autoimmune disease detection.',
     technologies: 'Python, Fusion, Jupyter, Spatial Omics, Data Visualization',
-    link: '#'
+    link: 'https://osf.io/qnbf5'
   },
 ]
 
