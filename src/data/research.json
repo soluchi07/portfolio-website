@@ -10,7 +10,7 @@
   "technologies": "Python, pandas, scikit-learn, Jupyter, Machine Learning, EDA, Classification Models, Imbalanced Learning",
   "link": "https://github.com/Jomak-x/Car-Insurance-ML"
 },
-    "id": 1,
+    "id": 2,
     "title": "Adverse Drug Event Detection from Clinical Notes",
     "institution": "Howard University",
     "year": "2025 - Present",
@@ -20,7 +20,7 @@
     "link": "#"
   },
   {
-    "id": 2,
+    "id": 1,
     "title": "HuBMAP Fusion — Spatial Omics & Autoimmune Disease Detection",
     "institution": "University of Florida",
     "year": "May - June 2025",
