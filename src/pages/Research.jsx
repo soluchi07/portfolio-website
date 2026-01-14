@@ -1,4 +1,5 @@
 import '../assets/css/Research.css'
+import projectData from '../data/projects.json';
 
 const researchItems = [
   {
