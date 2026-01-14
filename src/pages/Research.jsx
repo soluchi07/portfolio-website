@@ -42,8 +42,8 @@ export default function Research() {
                 <div className="research-tech">{item.technologies}</div>
               )}
               </a>
-            </div>
             <span className="research-year">{item.year}</span>
+           </div>
           </div>
         ))}
       </div>
