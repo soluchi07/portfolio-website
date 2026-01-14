@@ -28,7 +28,7 @@
   gap: 0.75rem;
 }
 
-.back-link {
+/* .back-link {
   color: #9ca3af;
   text-decoration: none;
   font-size: 0.95rem;
@@ -37,6 +37,42 @@
 
 .back-link:hover {
   color: #f3f3f3;
+} */
+
+.back-link {
+  position: fixed;
+  top: 2.5rem;
+  left: 1.5rem;
+  z-index: 30;
+  background: transparent;
+  color: #9ca3af;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  cursor: pointer;
+  backdrop-filter: none;
+  text-decoration: none;
+  width: fit-content;
+  animation: backButtonFadeIn 0.6s ease-out;
+  transition: color 0.2s ease;
+}
+
+
+.back-link:hover {
+  color: #f3f3f3;
+  transform: none;
+  opacity: 1;
+  background: transparent;
+}
+.back-link:focus{
+  outline: none;
+}
+
+.back-link:active {
+  transform: scale(0.98);
+  opacity: 1;
 }
 
 .thought-details-title {
