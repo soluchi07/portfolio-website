@@ -15,17 +15,17 @@ export default function Research() {
       <div className="research-list">
         {researchItems.map(item => (
           <div key={item.id} className="research-item">
+            <a href={item.link}>
             <div className="research-meta">
-              <a href={item.link}>
                 <h3 className="research-title">{item.title}</h3>
                 <div className="research-by">{item.institution} • <span className="year">{item.year}</span></div>
                 {item.technologies && (
                   <div className="research-tech">{item.technologies}</div>
                 )}
-              </a>
             </div>
             <p className="research-summary">{item.summary}</p>
             <span className="research-year">{item.year}</span>
+              </a>
           </div>
         ))}
       </div>
