@@ -1,5 +1,5 @@
 import '../assets/css/Research.css'
-import projectData from '../data/projects.json';
+import researchData from '../data/research.json';
 
 const researchItems = [
   {
@@ -24,7 +24,11 @@ const researchItems = [
   },
 ]
 
+
+
 export default function Research() {
+  const researchItems = researchData.items
+  
   return (
     <section className="research-page dark-mode">
       <header className="research-header">
