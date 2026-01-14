@@ -5,7 +5,7 @@
   "id": 3,
   "title": "Predicting Auto-Insurance Claims from Vehicle Specifications & Driver Profiles",
   "institution": "AI4ALL Ignite",
-  "year": "2025",
+  "year": "Aug - Dec 2025",
   "summary": "Investigated the feasibility of predicting auto-insurance claim risk using supervised machine learning on vehicle specification and driver profile datasets. Conducted extensive exploratory data analysis, addressed severe class imbalance (~6% claims) through class weighting and threshold optimization, and evaluated logistic regression and random forest models using ROC-AUC and PR-AUC metrics. Demonstrated improved risk ranking on balanced driver-profile data while highlighting the challenges of rare-event prediction in insurance contexts.",
   "technologies": "Python, pandas, scikit-learn, Jupyter, Machine Learning, EDA, Classification Models, Imbalanced Learning",
   "link": "https://github.com/Jomak-x/Car-Insurance-ML"
@@ -13,7 +13,7 @@
     "id": 2,
     "title": "Adverse Drug Event Detection from Clinical Notes",
     "institution": "Howard University",
-    "year": "2025 - Present",
+    "year": "Aug 2025 - Present",
     "summary":
       "Improving adverse drug event detection accuracy by integrating structured drug-side effect knowledge from the SIDER database with unstructured clinical notes from the n2c2 dataset. Implementing context engineering techniques that cross-reference drug mentions with documented pharmacological outcomes to reduce false positives and enhance clinical relevance.",
     "technologies": "Python, NLP, Clinical Text Mining, Pharmacovigilance",
