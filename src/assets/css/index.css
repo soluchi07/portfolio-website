@@ -14,6 +14,33 @@
   background-color: #000;
 }
 
+/* Performance optimizations for animations */
+.project-item,
+.research-item,
+.thought-item,
+.about-main,
+.about-extra,
+.page-button {
+  will-change: transform;
+}
+
+/* Accessibility: Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  /* Disable Framer Motion animations */
+  [data-framer-motion] {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 #root{
   width: 100%;
   height: 100%;

@@ -1,4 +1,5 @@
 import { Link, Outlet, useNavigate, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import '../assets/css/Layout.css';    
 import LogoLoop from './LogoLoop';
 import linkedin from '../assets/images/linkedin.jpg';
@@ -27,7 +28,18 @@ export default function Layout() {
     return (
         <div className="layout-container">
             {showBack && (
-                <button className="home-button" onClick={handleBack} aria-label="Go back to previous page">← Go Home</button>
+                <motion.button 
+                    className="home-button" 
+                    onClick={handleBack} 
+                    aria-label="Go back to previous page"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    whileHover={{ scale: 1.05, x: -5 }}
+                    whileTap={{ scale: 0.95 }}
+                >
+                    ← Go Home
+                </motion.button>
             )}
             <div className="layout-content">
             <Outlet/>
@@ -45,7 +57,7 @@ export default function Layout() {
                 fadeOutColor="#000"
                 ariaLabel="Contacts"
             />
-            made by <Link to="/" className="footer-link"> soluchi </Link>
+            made by <Link to="https://www.linkedin.com/in/soluchi" target="_blank" className="footer-link"> soluchi </Link>
             
         </footer>
         </div>

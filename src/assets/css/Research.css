@@ -3,11 +3,21 @@
 .research-page {
   max-width: 820px;
   margin: 0 auto;
+<<<<<<< Updated upstream
   padding: 3rem 1.5rem 7rem 1.5rem; /* Increased spacing for better readability */
   display: flex;
   flex-direction: column;
   gap: 2rem; /* Increased gap between sections for better spacing */
   animation: fadeIn 0.9s ease-in;
+=======
+  padding: 2.5rem 1.5rem 6.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  background: radial-gradient(ellipse at top left, rgba(17, 27, 217, 0.03) 0%, transparent 50%),
+              radial-gradient(ellipse at bottom, rgba(243, 239, 23, 0.02) 0%, transparent 50%);
+>>>>>>> Stashed changes
 }
 
 .research-header {
@@ -24,23 +34,86 @@
 .research-list {
   display: flex;
   flex-direction: column;
+<<<<<<< Updated upstream
   gap: 2.5rem; /* Increased gap between individual items */
+=======
+  gap: 2rem;
+  position: relative;
+}
+
+.research-list::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #f3ef17ff 0%, #28c655ff 50%, #111bd9ff 100%);
+  opacity: 0.3;
+>>>>>>> Stashed changes
 }
 
 .research-item {
   display: flex;
+<<<<<<< Updated upstream
   flex-direction: column; /* Adjusted to stack meta and summary */
   gap: 1rem; /* Spacing between meta and summary for clarity */
   padding: 1.5rem;
   border: 1px solid #333333; /* Added a box outline to make items distinct */
   border-radius: 8px; /* Slightly rounded corners for modern feel */
   transition: transform 0.2s ease, opacity 0.2s ease;
+=======
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.5rem 0 1.5rem 2rem;
+  border-bottom: 1px solid;
+  transition: all 0.3s ease;
+>>>>>>> Stashed changes
   cursor: pointer;
+  position: relative;
+  background: transparent;
 }
 
 .research-item:hover {
+<<<<<<< Updated upstream
   opacity: 0.9;
   transform: scale(1.02); /* Slight zoom effect for interactivity */
+=======
+  background: linear-gradient(90deg, rgba(243, 239, 23, 0.02) 0%, transparent 100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.research-item:last-child {
+  border-bottom: none;
+>>>>>>> Stashed changes
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -5px;
+  top: 2rem;
+  width: 12px;
+  height: 12px;
+  background: #f3ef17ff;
+  border-radius: 50%;
+  border: 2px solid #000;
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(243, 239, 23, 0.5);
+}
+
+.research-item:hover .timeline-dot {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(243, 239, 23, 0.5);
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(243, 239, 23, 0.8);
+  }
 }
 
 .research-meta {
@@ -73,12 +146,18 @@
 }
 
 .research-summary {
-  margin: 0;
+  margin: 0.75rem 0 0.5rem 0;
   font-family: "Sen";
   font-size: 1rem; /* Increased size for clarity */
   font-weight: 400;
+<<<<<<< Updated upstream
   line-height: 1.6; /* Better line spacing for summaries */
   color: #bbbbbb; /* Softer gray for subtlety */
+=======
+  line-height: 1.6;
+  color: #bdbdbd;
+  overflow: hidden;
+>>>>>>> Stashed changes
 }
 
 .research-link {
@@ -89,6 +168,60 @@
   font-weight: 600;
 }
 
+<<<<<<< Updated upstream
+=======
+.research-tech {
+  font-family: "Sen";
+  font-size: 0.9rem;
+  font-weight: 400;
+  opacity: 0.6;
+  margin-top: 0;
+}
+
+.research-tech-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.tech-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(243, 239, 23, 0.1);
+  border: 1px solid rgba(243, 239, 23, 0.3);
+  border-radius: 4px;
+  font-family: "Sen";
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #f3ef17ff;
+  transition: all 0.2s ease;
+}
+
+.tech-badge:hover {
+  background: rgba(243, 239, 23, 0.2);
+  border-color: rgba(243, 239, 23, 0.6);
+}
+
+.expand-button {
+  margin-top: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  font-family: "Sen";
+  font-size: 0.85rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.expand-button:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+>>>>>>> Stashed changes
 .research-year {
   font-family: "Sen";
   font-size: 0.95rem;
