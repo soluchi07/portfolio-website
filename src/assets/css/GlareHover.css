@@ -1,0 +1,25 @@
+.glare-hover-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.glare-effect {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+/* Ensure content stays above glare */
+.glare-hover-wrapper > *:not(.glare-effect) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Accessibility: Disable if reduced motion is preferred */
+@media (prefers-reduced-motion: reduce) {
+  .glare-effect {
+    display: none;
+  }
+}

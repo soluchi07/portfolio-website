@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import AnimatedList from '../components/AnimatedList';
 import '../assets/css/Thoughts.css'
 import thoughtsData from '../data/thoughts.json';
 
@@ -28,56 +29,30 @@ export default function Thoughts() {
         >
           Thoughts
         </motion.h1>
-        <div className="thoughts-list">
-          {thoughtsData.thoughts.map((t, index) => (
-            <motion.article 
-              key={t.id} 
-              className="thought-item"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: 0.5, 
-                delay: 0.3 + (index * 0.08),
-                ease: "easeOut"
-              }}
-              whileHover={{ 
-                scale: 1.02,
-                transition: { duration: 0.2 }
-              }}
-            >
-              <Link to={`/thoughts/${t.id}`} className="thought-link">
+        <AnimatedList
+          items={thoughtsData.thoughts}
+          showGradients={false}
+          enableArrowNavigation={false}
+          displayScrollbar={false}
+          renderItem={(thought, index, isSelected) => (
+            <div className={`thought-item ${isSelected ? 'selected' : ''}`}>
+              <Link to={`/thoughts/${thought.id}`} className="thought-link">
                 <div className="thought-content">
-                  <h3 className="thought-head">{t.title}</h3>
-                  <p className="thought-excerpt">{t.excerpt}</p>
-                  <motion.div 
-                    className="thought-meta"
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ 
-                      duration: 0.4,
-                      delay: 0.5 + (index * 0.08)
-                    }}
-                  >
+                  <h3 className="thought-head">{thought.title}</h3>
+                  <p className="thought-excerpt">{thought.excerpt}</p>
+                  <div className="thought-meta">
                     <span className="reading-time">
-                      {calculateReadingTime(t.content)} min read
+                      {calculateReadingTime(thought.content)} min read
                     </span>
-                  </motion.div>
+                  </div>
                 </div>
-                <motion.time 
-                  className="thought-date"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ 
-                    duration: 0.4,
-                    delay: 0.4 + (index * 0.08)
-                  }}
-                >
-                  {t.date}
-                </motion.time>
+                <time className="thought-date">
+                  {thought.date}
+                </time>
               </Link>
-            </motion.article>
-          ))}
-        </div>
+            </div>
+          )}
+        />
       </div>
     </motion.div>
   )

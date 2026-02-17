@@ -32,103 +32,88 @@ export default function Research() {
       </motion.header>
 
       <div className="research-list">
-        {researchItems.map(item => (
-          <div key={item.id} className="research-item">
-            <a href={item.link}>
         {researchItems.map((item, index) => (
-          <motion.div 
-            key={item.id} 
-            className="research-item"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 0.5, 
-              delay: 0.3 + (index * 0.15),
-              ease: "easeOut"
-            }}
-            whileHover={{ 
-              y: -4,
-              transition: { duration: 0.2 }
-            }}
-            onClick={() => toggleExpand(item.id)}
+  <motion.div 
+    key={item.id} 
+    className="research-item"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ 
+      duration: 0.5, 
+      delay: 0.3 + (index * 0.15),
+      ease: "easeOut"
+    }}
+    whileHover={{ y: -4 }}
+  >
+    <div className="timeline-dot"></div>
+
+    <div className="research-meta">
+      <h3 className="research-title">
+        <a 
+          href={item.link} 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          {item.title}
+        </a>
+      </h3>
+
+      <div className="research-by">
+        <motion.span
+          animate={{ opacity: [1, 0.7, 1] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          {item.institution}
+        </motion.span>
+        {' • '}
+        <span className="year">{item.year}</span>
+      </div>
+
+      {item.technologies && (
+        <div className="research-tech-container">
+          {item.technologies.split(', ').map((tech, i) => (
+            <motion.span
+              key={i}
+              className="tech-badge"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ 
+                duration: 0.3,
+                delay: 0.5 + (index * 0.15) + (i * 0.05)
+              }}
+              whileHover={{ scale: 1.1 }}
+            >
+              {tech}
+            </motion.span>
+          ))}
+        </div>
+      )}
+
+      <AnimatePresence>
+        {expandedId === item.id && (
+          <motion.p
+            className="research-summary"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
           >
-            <div className="timeline-dot"></div>
-            <div className="research-meta">
-                <h3 className="research-title">{item.title}</h3>
-                <div className="research-by">{item.institution} • <span className="year">{item.year}</span></div>
-                {item.technologies && (
-                  <div className="research-tech">{item.technologies}</div>
-                )}
-              <h3 className="research-title">{item.title}</h3>
-              <div className="research-by">
-                <motion.span
-                  animate={{ 
-                    opacity: [1, 0.7, 1] 
-                  }}
-                  transition={{ 
-                    duration: 2, 
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                >
-                  {item.institution}
-                </motion.span>
-                {' • '}
-                <span className="year">{item.year}</span>
-              </div>
-              {item.technologies && (
-                <div className="research-tech-container">
-                  {item.technologies.split(', ').map((tech, i) => (
-                    <motion.span
-                      key={i}
-                      className="tech-badge"
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ 
-                        duration: 0.3,
-                        delay: 0.5 + (index * 0.15) + (i * 0.05),
-                        ease: "backOut"
-                      }}
-                      whileHover={{
-                        scale: 1.1,
-                        y: -2,
-                        transition: { duration: 0.2 }
-                      }}
-                    >
-                      {tech}
-                    </motion.span>
-                  ))}
-                </div>
-              )}
-              
-              <AnimatePresence>
-                {expandedId === item.id && (
-                  <motion.p
-                    className="research-summary"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                  >
-                    {item.summary}
-                  </motion.p>
-                )}
-              </AnimatePresence>
-              
-              <motion.button
-                className="expand-button"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {expandedId === item.id ? '↑ Show less' : '↓ Read more'}
-              </motion.button>
-            </div>
-            <p className="research-summary">{item.summary}</p>
-            <span className="research-year">{item.year}</span>
-              </a>
-          </div>
-          </motion.div>
-        ))}
+            {item.summary}
+          </motion.p>
+        )}
+      </AnimatePresence>
+
+      <motion.button
+        className="expand-button"
+        onClick={() => toggleExpand(item.id)}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        {expandedId === item.id ? '↑ Show less' : '↓ Read more'}
+      </motion.button>
+    </div>
+  </motion.div>
+))}
       </div>
     </motion.section>
   )

@@ -1,9 +1,34 @@
 @import url('./Home.css');
 
 .about-page {
-  padding: 2.5rem 1.5rem 6.5rem 1.5rem;
-  max-width: 700px;
+  padding: 1rem 1.5rem 2rem 1.5rem;
+  max-width: 1200px;
   margin: 0 auto;
+  min-height: 100%;
+  overflow-y: auto;
+  margin-top: -60px;
+}
+
+.about-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.about-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-photo-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-right {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
@@ -11,13 +36,13 @@
 
 .about-header {
   display: flex;
-  align-items: center;
-  gap: 1.5rem;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .about-avatar {
-  width: 110px;
-  height: 110px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #f3ef17ff;
@@ -76,12 +101,11 @@
   font-size: 1rem;
   line-height: 1.6;
   padding-left: 1rem;
-  border-left: 2px solid transparent;
+  border-left: 2px solid #f3ef17ff;
   transition: all 0.2s ease;
 }
 
 .about-list li:hover {
-  border-left-color: #f3ef17ff;
   background: rgba(243, 239, 23, 0.03);
   padding-left: 1.25rem;
 }
@@ -94,34 +118,13 @@
   text-align: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   position: relative;
-  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.about-extra::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 10px;
-  padding: 2px;
-  background: linear-gradient(60deg, #f3ef17ff, #28c655ff, #111bd9ff, #e12a2aff, #f3ef17ff);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  animation: rotateGradient 8s linear infinite;
-  background-size: 300% 300%;
-}
-
-@keyframes rotateGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.about-extra h4,
+.about-extra p {
+  position: relative;
+  z-index: 2;
 }
 
 .about-extra h4 {
@@ -166,4 +169,26 @@
 .dark-mode .contact-form input,
 .dark-mode .contact-form textarea {
   border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Desktop Layout - Side by Side */
+@media (min-width: 900px) {
+  .about-layout {
+    flex-direction: row;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .about-left {
+    flex: 0 0 auto;
+  }
+
+  .about-avatar {
+    width: 300px;
+    height: 300px;
+  }
+
+  .about-right {
+    flex: 1;
+  }
 }

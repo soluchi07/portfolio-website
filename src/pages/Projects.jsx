@@ -1,13 +1,9 @@
 import '../assets/css/Projects.css';
-<<<<<<< Updated upstream
 import projectData from '../data/projects.json';
-=======
 import { motion } from 'framer-motion';
->>>>>>> Stashed changes
 
 export default function Projects() {
-
-    const projects = projectData.projects
+    const {projects} = projectData
 
     return (
         <motion.div 

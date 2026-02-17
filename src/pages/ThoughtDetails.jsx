@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import rehypeHighlight from 'rehype-highlight';
 import remarkGfm from 'remark-gfm';
@@ -14,7 +14,6 @@ export default function ThoughtDetails() {
       <div className="thought-details-page">
         <div className="thought-details-container">
           <header className="thought-details-header">
-            <Link to="/thoughts" className="back-link">← Back to Thoughts</Link>
             <h1 className="thought-details-title">Thought not found</h1>
           </header>
           <div className="thought-details-content">
@@ -29,7 +28,6 @@ export default function ThoughtDetails() {
     <div className="thought-details-page">
       <div className="thought-details-container">
         <header className="thought-details-header">
-          <Link to="/thoughts" className="back-link">← Back to Thoughts</Link>
           <h1 className="thought-details-title">{thought.title}</h1>
           <time className="thought-details-date">{thought.date}</time>
         </header>

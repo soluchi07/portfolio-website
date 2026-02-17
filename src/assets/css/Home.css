@@ -26,7 +26,7 @@ body {
 
 h3 {
   font-family: "Sen";
-  font-size: 2.2rem;
+  font-size: 1.87rem;
   font-weight: 700;
   margin-bottom: 1rem;
   letter-spacing: 0.5px;
@@ -35,7 +35,7 @@ h3 {
 
 h4 {
   font-family: "Sen";
-  font-size: 1.3rem;
+  font-size: 1.11rem;
   font-weight: 400;
   margin-bottom: 3rem;
   color: #666666;
@@ -54,27 +54,25 @@ h4 {
 .page-button-link {
   text-decoration: none;
   color: inherit;
-  width: 100%;
   display: flex;
   justify-content: center;
 }
 
 .page-button {
   font-family: "Sen";
-  font-size: 1.3rem;
+  font-size: 1.11rem;
   font-weight: 500;
-  padding: 0.75rem 2rem;
+  padding: 0.64rem 1.7rem;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
   position: relative;
   display: inline-block;
-  width: auto;
+  width: 100%;
   background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
+  border: none;
   color: inherit;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .page-button::before {
@@ -93,27 +91,67 @@ h4 {
 }
 
 .page-button:hover {
-  border-color: rgba(243, 239, 23, 0.6);
   background: rgba(243, 239, 23, 0.05);
-  box-shadow: 0 0 20px rgba(243, 239, 23, 0.3), 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 20px rgba(243, 239, 23, 0.3);
+}
+
+.home-button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
+}
+
+.page-button-link:hover .home-button {
+  transform: scale(1.04);
+}
+
+.page-button-link:active .home-button {
+  transform: scale(0.98);
+}
+
+.notfound-home-link {
+  position: fixed;
+  top: 2.5rem;
+  right: 1.5rem;
+  z-index: 30;
+  text-decoration: none;
+}
+
+.notfound-home-link:hover .home-button {
+  transform: scale(1.04);
+}
+
+.notfound-home-link:active .home-button {
+  transform: scale(0.98);
 }
 
 @media (max-width: 768px) {
   h3 {
-    font-size: 1.6rem;
+    font-size: 1.36rem;
   }
   
   h4 {
-    font-size: 1.1rem;
+    font-size: 0.94rem;
   }
   
   .page-button {
-    font-size: 1.1rem;
-    padding: 0.6rem 1.5rem;
+    font-size: 0.94rem;
+    padding: 0.51rem 1.28rem;
   }
   
   .button-container {
     gap: 0.6rem;
+  }
+
+  .notfound-home-link {
+    top: 2rem;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .notfound-home-link {
+    top: 2rem;
+    right: 1rem;
   }
 }
 

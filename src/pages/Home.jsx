@@ -2,6 +2,10 @@ import '../assets/css/Home.css'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ColorBends from './ColorBends';
+import StarBorder from '../components/StarBorder';
+import TextType from '../components/TextType';
+import ShinyText from '../components/ShinyText';
+import '../assets/css/TextType.css';
 
 export default function Home() {
   const buttons = [
@@ -42,7 +46,18 @@ export default function Home() {
           ease: [0.43, 0.13, 0.23, 0.96]
         }}
       >
-        // Soluchi_Fidel_Ibeabuchi //
+        <ShinyText
+          text="// Soluchi_Fidel_Ibeabuchi //"
+          speed={3}
+          delay={1}
+          color="#ffffff"
+          shineColor="#000000"
+          spread={120}
+          direction="left"
+          yoyo={false}
+          pauseOnHover={false}
+          disabled={false}
+        />
       </motion.h3>
       
       <motion.h4
@@ -54,7 +69,18 @@ export default function Home() {
           ease: [0.43, 0.13, 0.23, 0.96]
         }}
       >
-        CURIOSITY. CODE. CLARITY
+        <TextType 
+          text="CURIOSITY. CODE. CLARITY"
+          typingSpeed={75}
+          pauseDuration={1500}
+          showCursor
+          cursorCharacter="▎"
+          deletingSpeed={50}
+          variableSpeedEnabled={false}
+          variableSpeedMin={60}
+          variableSpeedMax={120}
+          cursorBlinkDuration={0.5}
+        />
       </motion.h4>
 
       <div className="button-container">
@@ -70,20 +96,9 @@ export default function Home() {
             }}
           >
             <Link to={button.to} className="page-button-link">
-              <motion.button
-                className="page-button"
-                whileHover={{ 
-                  scale: 1.05, 
-                  x: 10,
-                  transition: { duration: 0.2 }
-                }}
-                whileTap={{ 
-                  scale: 0.95,
-                  transition: { duration: 0.1 }
-                }}
-              >
-                {button.label}
-              </motion.button>
+              <StarBorder as="div" className="home-button" color="white" speed="6s">
+                  {button.label}
+              </StarBorder>
             </Link>
           </motion.div>
         ))}
